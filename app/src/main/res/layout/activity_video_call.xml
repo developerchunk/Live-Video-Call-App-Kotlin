@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".VideoCallActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/user_id_text_view"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_semibold"
+            android:text="Hi User Id!"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/manrope_extrabold"
+            android:text="Let's start a Video/\nAudio Call"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="To start a video/audio call please enter the user ID of whom you want to call and select the option of video/audio call."
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="100dp"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        app:cardBackgroundColor="#DCF0FA"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="1dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/receiver_user_id_text_field"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="@font/manrope_medium"
+            android:hint="User ID"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#504F4F"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:paddingVertical="5dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:visibility="invisible">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginEnd="15dp"
+            android:id="@+id/button_video"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="35dp"
+            app:cardBackgroundColor="#1AA8FF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+                    android:id="@+id/video_call_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#1AA8FF"/>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginStart="15dp"
+            android:id="@+id/button_audio"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardBackgroundColor="#1AA8FF"
+            app:cardCornerRadius="35dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+                    android:id="@+id/audio_call_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
